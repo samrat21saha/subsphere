@@ -58,3 +58,58 @@ flowchart LR
     A -->|All Requests| H[Arcjet Middleware]
     H -->|Rate Limit / Bot Check| D
 ```
+
+## ✅ Verified Functional Behavior
+
+The following behaviors were validated during local and API testing:
+
+- JWT tokens are issued and verified correctly
+- Unauthorized access to protected routes is blocked
+- Users can only access their own subscriptions
+- Rate-limited requests are rejected gracefully
+- Bot-like traffic is automatically denied
+
+✔️ Confirms correct authentication and authorization flow  
+✔️ Confirms secure ownership-based data access  
+✔️ Confirms middleware-driven API protection  
+
+
+## 🧩 Tech Stack
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose ODM)
+- JWT Authentication
+- Arcjet (Rate Limiting & Bot Protection)
+
+### Frontend
+- 🚧 Not implemented (API-first architecture)
+
+
+## 📂 Project Structure
+```
+SubSphere/
+├── config/
+│   ├── env.js
+│   ├── arcjet.js
+├── controllers/
+│   ├── auth.controller.js
+│   ├── user.controller.js
+│   └── subscription.controller.js
+├── middlewares/
+│   ├── auth.middleware.js
+│   ├── arcjet.middleware.js
+│   └── error.middleware.js
+├── models/
+│   ├── user.model.js
+│   └── subscription.model.js
+├── routes/
+│   ├── auth.routes.js
+│   ├── user.routes.js
+│   └── subscription.routes.js
+├── app.js
+├── package.json
+├── package-lock.json
+└── .gitignore
+```
